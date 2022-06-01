@@ -1,0 +1,48 @@
+﻿<Window x:Class="WPF_BEA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_BEA"
+        xmlns:Presentation ="clr-namespace:WPF_BEA.PRESENTATION"
+        mc:Ignorable="d"
+        FontSize="16"
+        Title="Application d'Audit" Height="450" Width="1000" Background="AliceBlue">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Fichier">
+                <MenuItem Header="_Nouveau" x:Name="Item_Nouveau" Click="Item_Nouveau_Click"/>
+                <MenuItem Header="_Ouvrir" x:Name="Item_Ouvrir" Click="Item_Ouvrir_Click"/>
+                <MenuItem Header="_Sauver" x:Name="Item_Sauver" Click="Item_Sauver_Click"/>
+                <Separator/>
+                <MenuItem Header="_Quitter" x:Name="Item_Quitter" Click="Item_Quitter_Click"/>
+            </MenuItem>
+
+        </Menu>
+        <Presentation:UI_Auditeur DockPanel.Dock="Top" Margin="27,0,30.6,0"/>
+        <Presentation:UI_Entreprise DockPanel.Dock="Top" Margin="27,0,30.6,0" />
+
+
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button Content="Ajout_Metrique" x:Name="BTN_AJOUT" Click="BTN_AJOUT_Click"/>
+        </StackPanel>
+
+        <ListView ItemsSource="{Binding Les_Metriques}" SelectedItem="{Binding Metrique_Selectionnee}"
+                  DockPanel.Dock="Top" Margin="27,0,30.6,0">
+            <ListView.Background>
+                <ImageBrush ImageSource="bea.png"/>
+            </ListView.Background>
+            <ListView.BorderBrush>
+                <ImageBrush ImageSource="bea.jpg"/>
+            </ListView.BorderBrush>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Presentation:UI_Metrique/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </DockPanel>
+</Window>

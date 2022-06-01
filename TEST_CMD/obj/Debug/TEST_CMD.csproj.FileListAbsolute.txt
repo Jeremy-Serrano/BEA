@@ -1,0 +1,2 @@
+C:\Users\jerem\Documents\CCI\BEA\BEA_ILLUSTRATOR\TEST_CMD\obj\Debug\TEST_CMD.csproj.AssemblyReference.cache
+C:\Users\jerem\Documents\CCI\BEA\BEA_ILLUSTRATOR\TEST_CMD\obj\Debug\TEST_CMD.csproj.CoreCompileInputs.cache
